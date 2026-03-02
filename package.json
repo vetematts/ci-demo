@@ -1,5 +1,5 @@
 {
-  "name": "03---ci-demo",
+  "name": "ci-demo",
   "version": "1.0.0",
   "description": "Demo of Continuous Integration pipeline setup using Github Actions",
   "main": "index.js",
@@ -18,7 +18,7 @@
     "url": "https://github.com/vetematts/ci-demo/issues"
   },
   "homepage": "https://github.com/vetematts/ci-demo#readme",
-  "dependencies": {
+  "devDependencies": {
     "jest": "^30.2.0"
   }
 }
