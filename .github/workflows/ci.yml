@@ -12,7 +12,7 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v6
+        uses: actions/checkout@v4
 
       - name: Setup Node.js environment
         uses: actions/setup-node@v4.0.3
@@ -27,7 +27,7 @@ jobs:
         run: npm test > test_report.txt
 
       - name: Upload a Build Artifact
-        uses: actions/upload-artifact@v7.0.0
+        uses: actions/upload-artifact@v4
         with:
           name: test_report
           path: test_report.txt
