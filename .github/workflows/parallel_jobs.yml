@@ -3,6 +3,8 @@ name: CI Parallel Jobs
 on:
     push:
         branches: ["main"]
+    pull_request:
+        branches: ["main"]
 
 jobs:
     lint:
@@ -48,4 +50,3 @@ jobs:
               with:
                 name: test_report
                 path: test_report.txt
-
