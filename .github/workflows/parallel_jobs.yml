@@ -10,11 +10,10 @@ jobs:
     lint:
         runs-on: ubuntu-latest
         env:
-            API_KEY: ${{ secrets.API_KEY }}
-
+          API_KEY: ${{ secrets.API_KEY }}
         steps:
             - name: Checkout code
-              uses: actions/checkout@v4
+              uses: actions/checkout@v6
 
             - name: Setup Node.js environment
               uses: actions/setup-node@v4.0.3
@@ -28,12 +27,15 @@ jobs:
             - name: Run linter
               run: npm run lint
 
+            - name: Printing echo to see what prints
+              run: echo ${{ env.API_KEY }}
+
     test:
         runs-on: ubuntu-latest
 
         steps:
             - name: Checkout code
-              uses: actions/checkout@v4
+              uses: actions/checkout@v6
 
             - name: Setup Node.js environment
               uses: actions/setup-node@v4.0.3
@@ -48,7 +50,7 @@ jobs:
               run: npm test > test_report.txt
 
             - name: Upload a Build Artifact
-              uses: actions/upload-artifact@v4
+              uses: actions/upload-artifact@v7.0.0
               with:
                 name: test_report
                 path: test_report.txt
