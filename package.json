@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "lint": "eslint ."
-    "run" : "node server.js"
+    "lint": "eslint .",
+    "run": "node server.js"
   },
   "repository": {
     "type": "git",
