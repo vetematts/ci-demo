@@ -1,0 +1,51 @@
+{
+    "containerDefinitions": [
+        {
+            "name": "sum-container",
+            "image": "ghcr.io/<user>/<repo>:latest",
+            "repositoryCredentials": {
+                "credentialsParameter": "arn:aws:secretsmanager:ap-southeast-2:673050318848:secret:GithubRepoConnection-MAADrN"
+            },
+            "cpu": 256,
+            "memory": 512,
+            "memoryReservation": 512,
+            "portMappings": [
+                {
+                    "name": "sum-container-3000-tcp",
+                    "containerPort": 3000,
+                    "hostPort": 3000,
+                    "protocol": "tcp",
+                    "appProtocol": "http"
+                }
+            ],
+            "essential": true,
+            "environment": [
+                {
+                    "name": "APP_NAME",
+                    "value": "sum-service"
+                },
+                {
+                    "name": "PORT",
+                    "value": "3000"
+                },
+                {
+                    "name": "APP_VERSION",
+                    "value": "v1"
+                }
+            ]
+        }
+    ],
+    "family": "AutomatedDeploymentPractice",
+    "executionRoleArn": "arn:aws:iam::673050318848:role/ecsTaskExecutionRole",
+    "networkMode": "awsvpc",
+    "revision": 2,
+    "requiresCompatibilities": [
+        "FARGATE"
+    ],
+    "cpu": "256",
+    "memory": "512",
+    "runtimePlatform": {
+        "cpuArchitecture": "X86_64",
+        "operatingSystemFamily": "LINUX"
+    }
+}
