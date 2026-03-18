@@ -53,3 +53,9 @@ env: IMAGE_NAME: ${{ github.repository }} REGISTRY: ghcr.io
 jobs: build-and-push-image: ...
 
 deploy: needs: build-and-push-image runs-on: ubuntu-latest
+permissins: contents: read
+
+emv: AWS_REGION: ap-southeast-2
+ECS_CLUSTER:
+ECS_SERVICE:
+ECS_TASK_DEFINITION:
