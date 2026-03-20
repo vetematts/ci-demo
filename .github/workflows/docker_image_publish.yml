@@ -81,7 +81,7 @@ jobs:
             task-definition: ${{ env.ECS_TASK_DEFINITION }}
             container-name: ${{ env.CONTAINER_NAME }}
             image: ghcr.io/apaud3l:latest
-            
+
         - name: Deploy Amazon ECS task definition
           uses: aws-actions/amazon-ecs-deploy-task-definition@v2
           with:
